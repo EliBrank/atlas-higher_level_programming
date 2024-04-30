@@ -1,8 +1,15 @@
 #!/usr/bin/python3
-def last_digit(n):
-    return abs(n) % 10
 import random
 number = random.randint(-10000, 10000)
+
+
+def last_digit(n):
+    num = abs(n) % 10
+    if n < 0:
+        return num * -1
+    else:
+        return num
+
 
 print(f"Last digit of {number} is {last_digit(number)}", end='')
 
