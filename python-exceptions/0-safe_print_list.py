@@ -11,12 +11,3 @@ def safe_print_list(my_list=[], x=0):
         pass
     finally:
         return print_ct
-
-my_list = [4, 3, 1, 8, 6]
-
-nb_print = safe_print_list(my_list, 0)
-print("nb_print: {:d}".format(nb_print))
-nb_print = safe_print_list(my_list, len(my_list))
-print("nb_print: {:d}".format(nb_print))
-nb_print = safe_print_list(my_list, len(my_list) + 2)
-print("nb_print: {:d}".format(nb_print))
