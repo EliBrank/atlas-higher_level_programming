@@ -1,31 +1,26 @@
 #!/usr/bin/python3
 
 def roman_to_int(roman_string):
-    numerals = { 'M': 1000, 'D': 500, 'C': 100, 'L': 50, 'X': 10, 'V': 5, 'I': 1 }
-    roman_string_rev = reversed(roman_string)
+    if roman_string is None or len(roman_string) < 1:
+        return 0
+    numerals = {
+        'M': 1000,
+        'D': 500,
+        'C': 100,
+        'L': 50,
+        'X': 10,
+        'V': 5,
+        'I': 1
+    }
     total = 0
 
-    # print(list(numerals.values())[3])
+    for i in range(len(roman_string)):
+        if i == len(roman_string) - 1:
+            total += numerals[roman_string[i]]
+            break
+        elif numerals[roman_string[i]] < numerals[roman_string[i]]:
+            total -= numerals[roman_string[i]]
+        else:
+            total += numerals[roman_string[i]]
 
-    for i in roman_str_rev:
-        if i is in numerals:
-            total += 
-
-
-
-roman_to_int("VI")
-
-roman_number = "X"
-print("{} = {}".format(roman_number, roman_to_int(roman_number)))
-
-roman_number = "VII"
-print("{} = {}".format(roman_number, roman_to_int(roman_number)))
-
-roman_number = "IX"
-print("{} = {}".format(roman_number, roman_to_int(roman_number)))
-
-roman_number = "LXXXVII"
-print("{} = {}".format(roman_number, roman_to_int(roman_number)))
-
-roman_number = "DCCVII"
-print("{} = {}".format(roman_number, roman_to_int(roman_number)))
+    return total
