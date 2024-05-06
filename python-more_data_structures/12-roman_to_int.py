@@ -4,9 +4,6 @@ def roman_to_int(roman_string):
     try:
         if roman_string is None or len(roman_string) < 1:
             return 0
-    except TypeError:
-        return 0
-    finally:
         numerals = {
             'M': 1000,
             'D': 500,
@@ -28,3 +25,6 @@ def roman_to_int(roman_string):
                 total += numerals[roman_string[i]]
 
         return total
+
+    except TypeError:
+        return 0
