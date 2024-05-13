@@ -1,12 +1,15 @@
 #!/usr/bin/python3
 
-"""establishes class Square
-
-    it is instantiated with the private attr size
-"""
+"""establishes class Square"""
 
 
 class Square:
-    """class is instatiated with private attr size"""
+    """Square is instatiated with size"""
     def __init__(self, size):
+        """defines size with instance
+
+        Args:
+            size: side length of Square
+        """
+
         self.__size = size
