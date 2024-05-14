@@ -2,6 +2,7 @@
 
 """establishes the empty class Rectangle"""
 
+
 class Rectangle:
     """Rectangle is created but given no extra information"""
 
