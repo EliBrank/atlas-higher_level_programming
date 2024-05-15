@@ -13,7 +13,7 @@ def text_indentation(text):
     if not isinstance(text, str):
         raise TypeError("text must be a string")
 
-    indent_chars = ('.','?',':')
+    indent_chars = ('.', '?', ':')
 
     new_text = ""
 
@@ -25,6 +25,4 @@ def text_indentation(text):
         else:
             new_text += char
 
-
     print(new_text, end="")
-
