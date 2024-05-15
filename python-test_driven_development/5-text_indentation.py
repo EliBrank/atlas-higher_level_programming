@@ -19,10 +19,12 @@ def text_indentation(text):
 
     for index, char in enumerate(text):
         if char in indent_chars:
-            new_text += "\n\n"
-        if char in indent_chars and text[index]
-            extract = text[index:].strip()
-            new_text += extract
+            new_text += char + "\n\n"
+        elif text[index].isspace() and new_text[-1] == '\n':
+            continue
+        else:
+            new_text += char
 
-    print(new_text)
+
+    print(new_text, end="")
 

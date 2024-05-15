@@ -14,7 +14,7 @@ def matrix_divided(matrix, div):
     """
 
     for row in matrix:
-        if
+        if 
         for a in row:
             if isinstance(a, float):
                 a = int(a)
