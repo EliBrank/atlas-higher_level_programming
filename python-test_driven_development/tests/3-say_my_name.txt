@@ -17,7 +17,7 @@ prints "My name is *first_name* *last_name*"
 	>>> say_my_name("John", "Smith")
 	My name is John Smith
 	>>> say_my_name("Bob")
-	My name is Bob
+	My name is Bob 
 
 Invalid Arguments
 =================
