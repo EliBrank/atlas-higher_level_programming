@@ -1,0 +1,41 @@
+=========================
+4-print_square.py doctest
+=========================
+
+Functions in 4-print_square.py module: ``print_square()``
+
+Import
+======
+
+>>> print_square = __import__('4-print_square').print_square
+
+Valid arguments
+===============
+
+``print_square()``
+prints ASCII square composed of "#" to stdout
+	>>> print_square(4)
+	####
+	####
+	####
+	####
+	>>> print_square(2.02)
+	##
+	##
+
+Invalid Arguments
+=================
+
+Non-numbers (ints and floats) as well as negative numbers raise exceptions
+	>>> print_square("hello")
+	Traceback (most recent call last):
+	...
+	TypeError: size must be an integer
+	>>> print_square(-4) 
+	Traceback (most recent call last):
+	...
+	ValueError: size must be >= 0
+	>>> print_square(-2.02) 
+	Traceback (most recent call last):
+	...
+	TypeError: size must be an integer
