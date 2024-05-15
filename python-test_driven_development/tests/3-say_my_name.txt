@@ -1,0 +1,33 @@
+========================
+3-say_my_name.py doctest
+========================
+
+Functions in 3-say_my_name.py module: ``say_my_name()``
+
+Import
+======
+
+>>> say_my_name = __import__('3-say_my_name').say_my_name
+
+Valid arguments
+===============
+
+``say_my_name()``
+prints "My name is *first_name* *last_name*"
+	>>> say_my_name("John", "Smith")
+	My name is John Smith
+	>>> say_my_name("Bob")
+	My name is Bob
+
+Invalid Arguments
+=================
+
+Non-strings raise exceptions
+	>>> say_my_name(12, "White")
+	Traceback (most recent call last):
+	...
+	TypeError: first_name must be a string
+	>>> say_my_name("Walter", 12) 
+	Traceback (most recent call last):
+	...
+	TypeError: last_name must be a string

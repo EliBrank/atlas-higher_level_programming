@@ -14,9 +14,11 @@ def matrix_divided(matrix, div):
     """
 
     for row in matrix:
+        if
         for a in row:
             if isinstance(a, float):
                 a = int(a)
             if not isinstance(a, int):
                 raise TypeError("matrix must be a matrix (list of lists) of integers/floats")
-    [[x / div for x in row] for row in matrix]
+
+            
