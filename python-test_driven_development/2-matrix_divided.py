@@ -13,6 +13,13 @@ def matrix_divided(matrix, div):
     Returns: new matrix with divided values
     """
 
+    if not isinstance(div, (int, float)):
+        raise TypeError("div must be a number")
+    if div == 0:
+        raise ZeroDivisionError("division by zero")
+
+    
+
     for row in matrix:
         if 
         for a in row:

@@ -18,7 +18,7 @@ class TestMaxInteger(unittest.TestCase):
         unordered = [3, 2, 4, 1]
         self.assertEqual(max_integer(unordered), 4)
 
-    def test_max_at_begginning(self):
+    def test_max_at_beginning(self):
         """Test a list with a beginning max value."""
         max_at_beginning = [4, 3, 2, 1]
         self.assertEqual(max_integer(max_at_beginning), 4)
