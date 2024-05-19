@@ -1,11 +1,12 @@
 #!/usr/bin/python3
 
-"""defines the function lookup"""
+"""defines the function print_sorted"""
 
 
-def lookup(obj):
-    """gets all atrributes/methods for input obejct
+class MyList(list):
+    """list holding integer values"""
 
-    Returns: all attributes/methods in list format
-    """
+    def print_sorted(self):
+        """prints all integers in list in ascending order"""
 
+        print(sorted(self))
