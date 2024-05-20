@@ -61,7 +61,7 @@ raises ValueError
 	>>> bg.integer_validator("my_int", 0)
 	Traceback (most recent call last):
 	...
-	ValueError: my_int must be greater than zero
+	ValueError: my_int must be greater than 0
 
 'negative number passed as value'
 raises ValueError
@@ -70,4 +70,4 @@ raises ValueError
 	>>> bg.integer_validator("my_int", -4)
 	Traceback (most recent call last):
 	...
-	ValueError: my_int must be greater than zero
+	ValueError: my_int must be greater than 0
