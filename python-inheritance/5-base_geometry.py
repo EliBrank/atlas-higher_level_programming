@@ -1,11 +1,8 @@
 #!/usr/bin/python3
 
-"""defines the function lookup"""
+"""defines the class base_geometry"""
 
 
-def lookup(obj):
-    """gets all atrributes/methods for input obejct
-
-    Returns: all attributes/methods in list format
-    """
-
+class BaseGeometry:
+    """class declaration for iterative additions"""
+    pass
