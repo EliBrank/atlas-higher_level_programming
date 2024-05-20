@@ -1,11 +1,21 @@
 #!/usr/bin/python3
 
-"""defines the function lookup"""
+"""defines the class Square"""
+
+Rectangle = __import__('9-rectangle').Rectangle
 
 
-def lookup(obj):
-    """gets all atrributes/methods for input obejct
+class Square(Rectangle):
+    """defines Square based on Rectangle"""
+    def __init__(self, size):
 
-    Returns: all attributes/methods in list format
-    """
+        """instantiates with size
 
+        Args:
+            size: side length
+        """
+
+        self.integer_validator("size", size)
+        self.__size = size
+
+        super().__init__(size, size)
