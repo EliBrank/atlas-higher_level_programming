@@ -1,11 +1,10 @@
 #!/usr/bin/python3
 
-"""defines the function lookup"""
+"""defines the class BaseGeometry"""
 
 
-def lookup(obj):
-    """gets all atrributes/methods for input obejct
+class BaseGeometry:
+    """defines empty area method"""
 
-    Returns: all attributes/methods in list format
-    """
-
+    def area(self):
+        raise Exception("area() is not implemented")
