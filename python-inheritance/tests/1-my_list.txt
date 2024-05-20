@@ -1,34 +1,55 @@
-========================
+====================
 1-my_list.py doctest
-========================
+====================
 
 Functions in 1-my_list.py module: ``my_list()``
 
 Import
 ======
 
->>> my_list = __import__('1-my_list').my_list
+>>> MyList = __import__('1-my_list').MyList
+
+
+``MyList.print_sorted()``
+prints list of integers in ascending order
 
 Valid arguments
 ===============
 
-``my_list()``
-prints "My name is *first_name* *last_name*"
-	>>> my_list("John", "Smith")
-	My name is John Smith
-	>>> my_list("Bob")
-	My name is Bob 
+'Unordered list'
+::
+	>>> my_list = MyList()
+	>>> my_list.append(1)
+	>>> my_list.append(4)
+	>>> my_list.append(2)
+	>>> my_list.append(3)
+	>>> my_list.append(5)
+	>>> my_list.print_sorted()
+	[1, 2, 3, 4, 5]
+
+'Single element list'
+::
+	>>> my_list = MyList()
+	>>> my_list.append(1)
+	>>> my_list.print_sorted()
+	[1]
+
+'In-order list'
+::
+	>>> my_list = MyList()
+	>>> my_list.append(1)
+	>>> my_list.append(2)
+	>>> my_list.append(3)
+	>>> my_list.append(4)
+	>>> my_list.append(5)
+	>>> my_list.print_sorted()
+	[1, 2, 3, 4, 5]
+
+'Empty list'
+::
+	>>> my_list = MyList()
+	>>> my_list.print_sorted()
+	[]
 
 Invalid Arguments
 =================
-
-Non-strings raise exceptions
-	>>> my_list(12, "White")
-	Traceback (most recent call last):
-	...
-	TypeError: first_name must be a string
-	>>> my_list("Walter", 12) 
-	Traceback (most recent call last):
-	...
-	TypeError: last_name must be a string
-
