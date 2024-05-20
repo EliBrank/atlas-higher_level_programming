@@ -1,0 +1,73 @@
+==========================
+7-base_geometry.py doctest
+==========================
+
+Functions in 7-base_geometry.py module:
+``BaseGeometry.area()``
+``BaseGeometry.integer_validator()``
+
+Import
+======
+
+>>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+
+
+``BaseGeometry.area()``
+always returns exception
+
+Invalid arguments
+=================
+
+'without input'
+::
+	>>> bg = BaseGeometry()
+	>>> print(bg.area())
+	Traceback (most recent call last):
+	...
+	Exception: area() is not implemented
+
+
+====================================
+
+``BaseGeometry.integer_validator()``
+checks that passed value is integer and greater than zero
+raises an exception otherwise
+
+Valid arguments
+===============
+
+'positive integer passed as value'
+should produce no output
+::
+	>>> bg = BaseGeometry()
+	>>> bg.integer_validator("my_int", 12)
+
+Invalid Arguments
+=================
+
+'str passed as value'
+raises TypeError
+::
+	>>> bg = BaseGeometry()
+	>>> bg.integer_validator("my_int", "my_val")
+	Traceback (most recent call last):
+	...
+	TypeError: my_int must be an integer
+
+'0 passed as value'
+raises ValueError
+::
+	>>> bg = BaseGeometry()
+	>>> bg.integer_validator("my_int", 0)
+	Traceback (most recent call last):
+	...
+	ValueError: my_int must be greater than zero
+
+'negative number passed as value'
+raises ValueError
+::
+	>>> bg = BaseGeometry()
+	>>> bg.integer_validator("my_int", -4)
+	Traceback (most recent call last):
+	...
+	ValueError: my_int must be greater than zero

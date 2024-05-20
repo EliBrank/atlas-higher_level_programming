@@ -2,7 +2,8 @@
 1-my_list.py doctest
 ====================
 
-Functions in 1-my_list.py module: ``my_list()``
+Functions in 1-my_list.py module:
+``MyList.print_sorted()``
 
 Import
 ======
