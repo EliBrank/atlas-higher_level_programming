@@ -1,11 +1,25 @@
 #!/usr/bin/python3
 
-"""defines the function lookup"""
+"""defines the class Square"""
+
+Rectangle = __import__('9-rectangle').Rectangle
 
 
-def lookup(obj):
-    """gets all atrributes/methods for input obejct
+class Square(Rectangle):
+    """defines Square based on Rectangle"""
+    def __init__(self, size): 
 
-    Returns: all attributes/methods in list format
-    """
+        """instantiates with size
 
+        Args:
+            size: side length
+        """
+
+        super().__init__(size, size)
+
+    def area(self):
+        """calculates Square area based on size
+
+        Returns: area, i.e. width multiplied by height
+        """
+        return self._Rectangle__width * self._Rectangle__height
