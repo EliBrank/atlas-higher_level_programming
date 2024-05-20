@@ -9,4 +9,8 @@ class MyList(list):
     def print_sorted(self):
         """prints all integers in list in ascending order"""
 
+        for i in self:
+            if not isinstance(i, int):
+                raise TypeError()
+
         print(sorted(self))
