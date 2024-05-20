@@ -1,11 +1,12 @@
 #!/usr/bin/python3
 
-"""defines the function lookup"""
+"""defines the function is_kind_of_class"""
 
 
-def lookup(obj):
-    """gets all atrributes/methods for input obejct
+def is_kind_of_class(obj, a_class):
+    """checks if specified object is descendant of specified class
 
-    Returns: all attributes/methods in list format
+    Returns: True if obj is of class that inherits from a_class, else False
     """
 
+    return isinstance(obj, a_class)
