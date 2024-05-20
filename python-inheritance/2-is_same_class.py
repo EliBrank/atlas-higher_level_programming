@@ -1,11 +1,15 @@
 #!/usr/bin/python3
 
-"""defines the function lookup"""
+"""defines the function is_same_class"""
 
 
-def lookup(obj):
-    """gets all atrributes/methods for input obejct
+def is_same_class(obj, a_class):
+    """checks if specified object is of specified class
 
-    Returns: all attributes/methods in list format
+    Returns: True if obj is of class a_class, else False
     """
 
+    if type(obj) is a_class:
+        return True
+    else:
+        return False
