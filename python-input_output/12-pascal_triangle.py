@@ -21,6 +21,7 @@ def pascal_triangle(n):
             if j == 0 or j == i:
                 row.append(1)
             else:
-                row.append(triangle_matrix[i - 1][j] + triangle_matrix[i - 1][j - 1])
+                row.append(triangle_matrix[i - 1][j] +
+                triangle_matrix[i - 1][j - 1])
 
     return triangle_matrix
