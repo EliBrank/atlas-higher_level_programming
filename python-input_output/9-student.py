@@ -3,9 +3,6 @@
 """defines the class Student"""
 
 
-from collections.abc import AsyncGenerator
-
-
 class Student:
     """defines Student instances"""
 
@@ -15,5 +12,6 @@ class Student:
         self.age = age
 
     def to_json(self):
-        
+        """creates dictionary ready to be serialized into json"""
+        return self.__dict__
 
