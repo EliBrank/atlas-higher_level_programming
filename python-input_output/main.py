@@ -1,16 +1,12 @@
 #!/usr/bin/python3
-"""
-12-main
-"""
-pascal_triangle = __import__('12-pascal_triangle').pascal_triangle
+MyClass = __import__('8-my_class').MyClass
+class_to_json = __import__('8-class_to_json').class_to_json
 
-def print_triangle(triangle):
-    """
-    Print the triangle
-    """
-    for row in triangle:
-        print("[{}]".format(",".join([str(x) for x in row])))
+m = MyClass("John")
+m.number = 89
+print(type(m))
+print(m)
 
-
-if __name__ == "__main__":
-    print_triangle(pascal_triangle(5))
+mj = class_to_json(m)
+print(type(mj))
+print(mj)
