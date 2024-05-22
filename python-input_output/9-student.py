@@ -14,4 +14,3 @@ class Student:
     def to_json(self):
         """creates dictionary ready to be serialized into json"""
         return self.__dict__
-
