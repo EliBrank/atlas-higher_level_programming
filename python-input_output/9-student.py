@@ -12,5 +12,9 @@ class Student:
         self.age = age
 
     def to_json(self):
-        """creates dictionary ready to be serialized into json"""
+        """creates dictionary ready to be serialized into json
+
+        Returns: Python dictionary of attributes
+        """
+
         return self.__dict__
