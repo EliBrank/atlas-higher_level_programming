@@ -118,13 +118,16 @@ class Rectangle(Base):
         """prints Rectangle pictorally using '#'"""
 
         print_result = ""
-        if self.width != 0 and self.height != 0:
-            for row in range(self.height):
-                for i in range(self.width):
-                    print_result += str("#")
-                # does not print newline on last row
-                if row != self.height - 1:
-                    print_result += '\n'
+        for row_offset in range(self.y):
+            print_result += '\n'
+        for row in range(self.height):
+            for column_offset in range(self.x):
+                print_result += " "
+            for column in range(self.width):
+                print_result += str("#")
+            # does not print newline on last row
+            if row != self.height - 1:
+                print_result += '\n'
 
         print(print_result)
 
