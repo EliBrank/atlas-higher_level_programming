@@ -6,7 +6,7 @@ from models.base import Base
 
 
 class Rectangle(Base):
-    """base for Rectangle, Square classes"""
+    """a rectangle shape which can be modified and printed"""
 
     def __init__(self, width, height, x=0, y=0, id=None):
         """instantiates Rectangle"""
