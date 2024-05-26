@@ -19,4 +19,4 @@ class Square(Rectangle):
         """
 
         return (f"[{self.__class__.__name__}] ({self.id}) "
-                f"{self.x}/{self.y} - {self.width}/{self.height}")
+                f"{self.x}/{self.y} - {self.width}")
