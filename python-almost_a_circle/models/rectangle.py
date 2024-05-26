@@ -112,4 +112,18 @@ class Rectangle(Base):
         Returns: area, i.e. width multiplied by height
         """
 
-        return self.__width * self.__height
+        return self.width * self.height
+
+    def display(self):
+        """prints Rectangle pictorally using '#'"""
+
+        print_result = ""
+        if self.width != 0 and self.height != 0:
+            for row in range(self.height):
+                for i in range(self.width):
+                    print_result += str("#")
+                # does not print newline on last row
+                if row != self.height - 1:
+                    print_result += '\n'
+
+        print(print_result)
