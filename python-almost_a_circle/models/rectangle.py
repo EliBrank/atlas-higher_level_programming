@@ -127,3 +127,12 @@ class Rectangle(Base):
                     print_result += '\n'
 
         print(print_result)
+
+    def __str__(self) -> str:
+        """re-formats Rectangle printout to display class and properties
+
+        Returns: [<class>] (<id>) <x>/<y> - <width>/<height>
+        """
+
+        return (f"[{self.__class__.__name__}] ({self.id}) "
+                f"{self.x}/{self.y} - {self.width}/{self.height}")
