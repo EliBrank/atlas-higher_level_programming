@@ -131,17 +131,22 @@ class Rectangle(Base):
 
         print(print_result)
 
-    def update(self, *args):
-        """reassigns attributes based on order entered
+    def update(self, *args, **kwargs):
+        """reassigns attributes based on input
 
         Args:
-            args (id, width, height, x, y) in order
+            args: (id, width, height, x, y) in order
+            kwargs: any number of attr=attr_value pairs
         """
 
         attr_order = ["id", "width", "height", "x", "y"]
 
-        for index, arg in enumerate(args):
-            setattr(self, attr_order[index], arg)
+        if args is not None and len(args) > 0:
+            for index, arg in enumerate(args):
+                setattr(self, attr_order[index], arg)
+        else:
+            for attr, attr_value in kwargs.items():
+                setattr(self, attr, attr_value)
 
     def __str__(self) -> str:
         """re-formats Rectangle printout to display class and properties
