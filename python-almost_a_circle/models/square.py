@@ -12,6 +12,26 @@ class Square(Rectangle):
         """instantiates Square"""
         super().__init__(size, size, x, y, id)
 
+    @property
+    def size(self):
+        """getter method for size
+
+        Returns: current size of Square
+        """
+
+        return self.width
+
+    @size.setter
+    def size(self, value):
+        """setter method for size
+
+        Args:
+            value: new value for size
+        """
+
+        self.width = value
+        self.height = value
+
     def __str__(self):
         """re-formats Square printout to display class and properties
 
