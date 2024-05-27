@@ -154,8 +154,6 @@ class Rectangle(Base):
         Returns: list containing id, width, height, x, y
         """
 
-        return ["id", "width", "height", "x", "y"]
-
     def __str__(self):
         """re-formats Rectangle printout to display class and properties
 

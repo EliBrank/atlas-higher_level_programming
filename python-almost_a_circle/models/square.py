@@ -32,13 +32,22 @@ class Square(Rectangle):
         self.width = value
         self.height = value
 
-    def get_attr_order(self):
-        """changes attribute list checked by update
+    def update(self, *args, **kwargs):
+        """reassigns attributes based on input
 
-        Returns: list containing id, size, x, y
+        Args:
+            args: (id, size, x, y) in order
+            kwargs: any number of attr=attr_value pairs
         """
 
-        return ["id", "size", "x", "y"]
+        attr_order = ["id", "size", "x", "y"]
+
+        if args is not None and len(args) > 0:
+            for index, arg in enumerate(args):
+                setattr(self, attr_order[index], arg)
+        else:
+            for attr, attr_value in kwargs.items():
+                setattr(self, attr, attr_value)
 
     def __str__(self):
         """re-formats Square printout to display class and properties
