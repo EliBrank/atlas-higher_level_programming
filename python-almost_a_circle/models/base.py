@@ -21,7 +21,13 @@ class Base:
 
     @staticmethod
     def from_json_string(json_string):
-        """returns JSON string representation of json_string"""
+        """converts JSON string to python objects
+
+        Args:
+            json_string: JSON string to be converted
+
+        Returns: Python object representation of JSON string
+        """
 
         if json_string is None:
             return []
@@ -30,7 +36,13 @@ class Base:
 
     @staticmethod
     def to_json_string(list_dictionaries):
-        """returns JSON string representation of list_dictionaries"""
+        """converts python dictionaries to JSON string
+
+        Args:
+            list_dictionaries: python dictionaries to be converted
+
+        Returns: JSON string representation of dictionaries list
+        """
 
         if list_dictionaries is None:
             return "[]"
@@ -39,7 +51,11 @@ class Base:
 
     @classmethod
     def save_to_file(cls, list_objs):
-        """saves each object in list_objs to JSON file"""
+        """saves each object in list_objs to JSON file
+
+        Args:
+            list_objs: python objects to be converted and saved
+        """
 
         filename = f"{cls.__name__}.json"
 
@@ -51,3 +67,17 @@ class Base:
                 f.write(cls.to_json_string(json_list))
             else:
                 f.write(cls.to_json_string([]))
+
+    @classmethod
+    def create(cls, **dictionary):
+        """uses dictionary values to update newly created class instance
+
+        Args:
+            dictionary: values for class update method saved as dictionary
+        """
+
+        tmp_obj = cls(1, 1)
+
+        tmp_obj.update(**dictionary)
+
+        return tmp_obj
