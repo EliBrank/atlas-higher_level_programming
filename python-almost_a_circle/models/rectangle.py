@@ -148,11 +148,13 @@ class Rectangle(Base):
             for attr, attr_value in kwargs.items():
                 setattr(self, attr, attr_value)
 
-    def get_attr_order(self):
-        """changes attribute list checked by update
+    def to_dictionary(self):
+        """returns dictionary representation of object"""
+        attr_order = ["id", "width", "height", "x", "y"]
 
-        Returns: list containing id, width, height, x, y
-        """
+        user_attrs = {attr: getattr(self, attr) for attr in attr_order}
+
+        return user_attrs
 
     def __str__(self):
         """re-formats Rectangle printout to display class and properties

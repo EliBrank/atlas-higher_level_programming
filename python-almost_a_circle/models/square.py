@@ -49,6 +49,14 @@ class Square(Rectangle):
             for attr, attr_value in kwargs.items():
                 setattr(self, attr, attr_value)
 
+    def to_dictionary(self):
+        """returns dictionary representation of object"""
+        attr_order = ["id", "size", "x", "y"]
+
+        user_attrs = {attr: getattr(self, attr) for attr in attr_order}
+
+        return user_attrs
+
     def __str__(self):
         """re-formats Square printout to display class and properties
 

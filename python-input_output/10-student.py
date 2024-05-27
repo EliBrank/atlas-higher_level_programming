@@ -19,6 +19,7 @@ class Student:
 
         Returns: Python dictionary of attributes specified
         """
+
         if attrs is None:
             return self.__dict__
         else:
