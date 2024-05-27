@@ -32,6 +32,14 @@ class Square(Rectangle):
         self.width = value
         self.height = value
 
+    def get_attr_order(self):
+        """changes attribute list checked by update
+
+        Returns: list containing id, size, x, y
+        """
+
+        return ["id", "size", "x", "y"]
+
     def __str__(self):
         """re-formats Square printout to display class and properties
 

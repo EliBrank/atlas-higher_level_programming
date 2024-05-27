@@ -148,7 +148,15 @@ class Rectangle(Base):
             for attr, attr_value in kwargs.items():
                 setattr(self, attr, attr_value)
 
-    def __str__(self) -> str:
+    def get_attr_order(self):
+        """changes attribute list checked by update
+
+        Returns: list containing id, width, height, x, y
+        """
+
+        return ["id", "width", "height", "x", "y"]
+
+    def __str__(self):
         """re-formats Rectangle printout to display class and properties
 
         Returns: [<class>] (<id>) <x>/<y> - <width>/<height>
