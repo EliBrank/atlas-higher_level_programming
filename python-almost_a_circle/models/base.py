@@ -20,6 +20,15 @@ class Base:
             self.id = Base.__nb_objects
 
     @staticmethod
+    def from_json_string(json_string):
+        """returns JSON string representation of json_string"""
+
+        if json_string is None:
+            return []
+        else:
+            return json.loads(json_string)
+
+    @staticmethod
     def to_json_string(list_dictionaries):
         """returns JSON string representation of list_dictionaries"""
 
