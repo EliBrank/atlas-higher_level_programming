@@ -78,8 +78,10 @@ class Base:
         try:
             with open(filename, "r") as f:
                 json_string = f.read()
-                obj_list = ([cls.create(**obj) for obj in
-                cls.from_json_string(json_string)])
+                obj_list = [
+                    cls.create(**obj)
+                    for obj in cls.from_json_string(json_string)
+                ]
         except FileNotFoundError:
             return obj_list
 
