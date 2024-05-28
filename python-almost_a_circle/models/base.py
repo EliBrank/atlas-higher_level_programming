@@ -83,7 +83,7 @@ class Base:
         except FileNotFoundError:
             return obj_list
 
-
+        return obj_list
 
     @classmethod
     def create(cls, **dictionary):
