@@ -69,6 +69,23 @@ class Base:
                 f.write(cls.to_json_string([]))
 
     @classmethod
+    def load_from_file(cls):
+        """returns JSON file as list of Python objects"""
+
+        filename = f"{cls.__name__}.json"
+
+        obj_list = []
+        try:
+            with open(filename, "r") as f:
+                json_string = f.read()
+                obj_list = ([cls.create(**obj) for obj in
+                cls.from_json_string(json_string)])
+        except FileNotFoundError:
+            return obj_list
+
+
+
+    @classmethod
     def create(cls, **dictionary):
         """uses dictionary values to update newly created class instance
 
