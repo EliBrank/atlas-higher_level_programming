@@ -76,7 +76,10 @@ class Base:
             dictionary: values for class update method saved as dictionary
         """
 
-        tmp_obj = cls(1, 1)
+        if cls.__name__ == "Square":
+            tmp_obj = cls(1)
+        else:
+            tmp_obj = cls(1, 1)
 
         tmp_obj.update(**dictionary)
 
