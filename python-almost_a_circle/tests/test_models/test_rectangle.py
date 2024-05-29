@@ -107,18 +107,62 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(r1.y, 5)
         self.assertEqual(r1.id, 89)
 
-# update() in Rectangle
-#
-# update(89) in Rectangle
-#
-# update(89, 1) in Rectangle
-#
-# update(89, 1, 2) in Rectangle
-#
-# update(89, 1, 2, 3) in Rectangle
-#
-# update(89, 1, 2, 3, 4) in Rectangle
-#
+
+    def test_update_kwargs(self):
+        """test update method using kwargs as input"""
+        r1 = Rectangle(10, 10, 10, 10, 1)
+
+        r1.update(**{ 'id': 89 })
+        self.assertEqual(r1.id, 89)
+
+        r1.update(**{ 'id': 89, 'width': 1 })
+        self.assertEqual(r1.id, 89)
+        self.assertEqual(r1.width, 1)
+
+        r1.update(**{ 'id': 89, 'width': 1, 'height': 2 })
+        self.assertEqual(r1.id, 89)
+        self.assertEqual(r1.width, 1)
+        self.assertEqual(r1.height, 2)
+
+        r1.update(**{ 'id': 89, 'width': 1, 'height': 2, 'x': 3 })
+        self.assertEqual(r1.id, 89)
+        self.assertEqual(r1.width, 1)
+        self.assertEqual(r1.height, 2)
+        self.assertEqual(r1.x, 3)
+
+        r1.update(**{ 'id': 89, 'width': 1, 'height': 2, 'x': 3, 'y': 4 })
+        self.assertEqual(r1.id, 89)
+        self.assertEqual(r1.width, 1)
+        self.assertEqual(r1.height, 2)
+        self.assertEqual(r1.x, 3)
+        self.assertEqual(r1.y, 4)
+
+    def test_create(self):
+        """test create method with different numbers of args"""
+        r1 = Rectangle.create(**{ 'id': 89 })
+        self.assertEqual(r1.id, 89)
+
+        r2 = Rectangle.create(**{ 'id': 89, 'width': 1 })
+        self.assertEqual(r2.id, 89)
+        self.assertEqual(r2.width, 1)
+
+        r3 = Rectangle.create(**{ 'id': 89, 'width': 1, 'height': 2 })
+        self.assertEqual(r3.id, 89)
+        self.assertEqual(r3.width, 1)
+        self.assertEqual(r3.height, 2)
+
+        r4 = Rectangle.create(**{ 'id': 89, 'width': 1, 'height': 2, 'x': 3 })
+        self.assertEqual(r4.id, 89)
+        self.assertEqual(r4.width, 1)
+        self.assertEqual(r4.height, 2)
+        self.assertEqual(r4.x, 3)
+
+        r5 = Rectangle.create(**{ 'id': 89, 'width': 1, 'height': 2, 'x': 3, 'y': 4 })
+        self.assertEqual(r5.id, 89)
+        self.assertEqual(r5.width, 1)
+        self.assertEqual(r5.height, 2)
+        self.assertEqual(r5.x, 3)
+        self.assertEqual(r5.y, 4)
 
 # area()
 #
@@ -131,26 +175,6 @@ class TestRectangle(unittest.TestCase):
 # display()
 #
 # to_dictionary() in Rectangle
-#
-# update(**{ 'id': 89 }) in Rectangle
-#
-# update(**{ 'id': 89, 'width': 1 }) in Rectangle
-#
-# update(**{ 'id': 89, 'width': 1, 'height': 2 }) in Rectangle
-#
-# update(**{ 'id': 89, 'width': 1, 'height': 2, 'x': 3 }) in Rectangle
-#
-# update(**{ 'id': 89, 'width': 1, 'height': 2, 'x': 3, 'y': 4 }) in Rectangle
-#
-# Rectangle.create(**{ 'id': 89 }) in Rectangle
-#
-# Rectangle.create(**{ 'id': 89, 'width': 1 }) in Rectangle
-#
-# Rectangle.create(**{ 'id': 89, 'width': 1, 'height': 2 }) in Rectangle
-#
-# Rectangle.create(**{ 'id': 89, 'width': 1, 'height': 2, 'x': 3 }) in Rectangle
-#
-# Rectangle.create(**{ 'id': 89, 'width': 1, 'height': 2, 'x': 3, 'y': 4 }) in Rectangle
 #
 # Rectangle.save_to_file(None) in Rectangle
 #
