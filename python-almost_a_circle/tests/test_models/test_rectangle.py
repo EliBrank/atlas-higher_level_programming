@@ -63,18 +63,50 @@ class TestRectangle(unittest.TestCase):
         with self.assertRaises(ValueError):
             Rectangle(1, 0)
 
-# area()
-#
-# __str__() for Rectangle
-#
-# display() without x and y
-#
-# display() without y
-#
-# display()
-#
-# to_dictionary() in Rectangle
-#
+    def test_update(self):
+        """test update method on existing object"""
+        r1 = Rectangle(10, 10, 10, 10, 1)
+        self.assertEqual(r1.width, 10)
+        self.assertEqual(r1.height, 10)
+        self.assertEqual(r1.x, 10)
+        self.assertEqual(r1.y, 10)
+        self.assertEqual(r1.id, 1)
+
+        r1.update(89)
+        self.assertEqual(r1.width, 10)
+        self.assertEqual(r1.height, 10)
+        self.assertEqual(r1.x, 10)
+        self.assertEqual(r1.y, 10)
+        self.assertEqual(r1.id, 89)
+
+        r1.update(89, 2)
+        self.assertEqual(r1.width, 2)
+        self.assertEqual(r1.height, 10)
+        self.assertEqual(r1.x, 10)
+        self.assertEqual(r1.y, 10)
+        self.assertEqual(r1.id, 89)
+
+        r1.update(89, 2, 3)
+        self.assertEqual(r1.width, 2)
+        self.assertEqual(r1.height, 3)
+        self.assertEqual(r1.x, 10)
+        self.assertEqual(r1.y, 10)
+        self.assertEqual(r1.id, 89)
+
+        r1.update(89, 2, 3, 4)
+        self.assertEqual(r1.width, 2)
+        self.assertEqual(r1.height, 3)
+        self.assertEqual(r1.x, 4)
+        self.assertEqual(r1.y, 10)
+        self.assertEqual(r1.id, 89)
+
+        r1.update(89, 2, 3, 4, 5)
+        self.assertEqual(r1.width, 2)
+        self.assertEqual(r1.height, 3)
+        self.assertEqual(r1.x, 4)
+        self.assertEqual(r1.y, 5)
+        self.assertEqual(r1.id, 89)
+
 # update() in Rectangle
 #
 # update(89) in Rectangle
@@ -86,6 +118,19 @@ class TestRectangle(unittest.TestCase):
 # update(89, 1, 2, 3) in Rectangle
 #
 # update(89, 1, 2, 3, 4) in Rectangle
+#
+
+# area()
+#
+# __str__() for Rectangle
+#
+# display() without x and y
+#
+# display() without y
+#
+# display()
+#
+# to_dictionary() in Rectangle
 #
 # update(**{ 'id': 89 }) in Rectangle
 #
