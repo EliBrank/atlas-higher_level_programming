@@ -9,8 +9,8 @@ from models.rectangle import Rectangle
 
 class TestRectangle(unittest.TestCase):
     """defines unittests for methods in Rectangle class"""
-    def test_init_wh(self):
-        """test width, height"""
+    def test_init(self):
+        """test width, height, x, y"""
         r1 = Rectangle(1, 2)
         self.assertEqual(r1.width, 1)
         self.assertEqual(r1.height, 2)
@@ -26,23 +26,93 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(r3.x, 3)
         self.assertEqual(r3.y, 4)
 
-    # def test_init_wh(self):
-    #     """test width, height"""
-    #     r = Rectangle(1, 2)
-    #     self.assertEqual(r.width, 1)
-    #     self.assertEqual(r.height, 2)
-    #
-    # def test_init_whx(self):
-    #     """test width, height, x"""
-    #     r = Rectangle(1, 2, 3)
-    #     self.assertEqual(r.width, 1)
-    #     self.assertEqual(r.height, 2)
-    #     self.assertEqual(r.x, 3)
-    #
-    # def test_init_whxy(self):
-    #     """test width, height, x, y"""
-    #     r = Rectangle(1, 2, 3, 4)
-    #     self.assertEqual(r.width, 1)
-    #     self.assertEqual(r.height, 2)
-    #     self.assertEqual(r.x, 3)
-    #     self.assertEqual(r.y, 4)
+        r4 = Rectangle(1, 2, 3, 4, 5)
+        self.assertEqual(r4.width, 1)
+        self.assertEqual(r4.height, 2)
+        self.assertEqual(r4.x, 3)
+        self.assertEqual(r4.y, 4)
+        self.assertEqual(r4.id, 5)
+
+
+    def test_init_NaN(self):
+        """test non-nums for Rectangle init"""
+        with self.assertRaises(TypeError):
+            Rectangle("1", 2)
+        with self.assertRaises(TypeError):
+            Rectangle(1, "2")
+        with self.assertRaises(TypeError):
+            Rectangle(1, 2, "3")
+        with self.assertRaises(TypeError):
+            Rectangle(1, 2, 3, "4")
+
+    def test_init_negative(self):
+        """test negative nums for Rectangle init"""
+        with self.assertRaises(ValueError):
+            Rectangle(-1, 2)
+        with self.assertRaises(ValueError):
+            Rectangle(1, -2)
+        with self.assertRaises(ValueError):
+            Rectangle(1, 2, -3)
+        with self.assertRaises(ValueError):
+            Rectangle(1, 2, 3, -4)
+
+    def test_init_wh_zero(self):
+        """test zero for width and height"""
+        with self.assertRaises(ValueError):
+            Rectangle(0, 2)
+        with self.assertRaises(ValueError):
+            Rectangle(1, 0)
+
+# area()
+#
+# __str__() for Rectangle
+#
+# display() without x and y
+#
+# display() without y
+#
+# display()
+#
+# to_dictionary() in Rectangle
+#
+# update() in Rectangle
+#
+# update(89) in Rectangle
+#
+# update(89, 1) in Rectangle
+#
+# update(89, 1, 2) in Rectangle
+#
+# update(89, 1, 2, 3) in Rectangle
+#
+# update(89, 1, 2, 3, 4) in Rectangle
+#
+# update(**{ 'id': 89 }) in Rectangle
+#
+# update(**{ 'id': 89, 'width': 1 }) in Rectangle
+#
+# update(**{ 'id': 89, 'width': 1, 'height': 2 }) in Rectangle
+#
+# update(**{ 'id': 89, 'width': 1, 'height': 2, 'x': 3 }) in Rectangle
+#
+# update(**{ 'id': 89, 'width': 1, 'height': 2, 'x': 3, 'y': 4 }) in Rectangle
+#
+# Rectangle.create(**{ 'id': 89 }) in Rectangle
+#
+# Rectangle.create(**{ 'id': 89, 'width': 1 }) in Rectangle
+#
+# Rectangle.create(**{ 'id': 89, 'width': 1, 'height': 2 }) in Rectangle
+#
+# Rectangle.create(**{ 'id': 89, 'width': 1, 'height': 2, 'x': 3 }) in Rectangle
+#
+# Rectangle.create(**{ 'id': 89, 'width': 1, 'height': 2, 'x': 3, 'y': 4 }) in Rectangle
+#
+# Rectangle.save_to_file(None) in Rectangle
+#
+# Rectangle.save_to_file([]) in Rectangle
+#
+# Rectangle.save_to_file([Rectangle(1, 2)]) in Rectangle
+#
+# Rectangle.load_from_file() when file doesn’t exist
+#
+# Rectangle.load_from_file()
