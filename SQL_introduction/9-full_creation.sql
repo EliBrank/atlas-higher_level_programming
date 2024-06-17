@@ -1,7 +1,7 @@
 -- creates table called second_table in current database
 -- populates table with four entries
 
-CREATE TABLE second_table (
+CREATE TABLE IF NOT EXISTS second_table (
   id INT,
   name VARCHAR(256),
   score INT
