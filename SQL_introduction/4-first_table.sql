@@ -1,4 +1,4 @@
--- creates tables called first_table in current database
+-- creates table called first_table in current database
 
 CREATE TABLE first_table (
   id INT,

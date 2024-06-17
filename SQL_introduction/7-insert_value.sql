@@ -1,5 +1,5 @@
 -- inserts row of static info into first_table
 
 INSERT INTO first_table (
- 	id, name
+  id, name
  ) VALUES ( 89, "Best School" );
