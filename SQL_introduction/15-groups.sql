@@ -1,4 +1,5 @@
--- retrieves average scores for all rows in second_table
+-- retrieves number of instances for each score in second_table
 
-SELECT COUNT(*) FROM second_table
-WHERE score = ;
+SELECT score, COUNT(*) AS 'number' FROM second_table
+GROUP BY score
+ORDER BY 'number' DESC;
