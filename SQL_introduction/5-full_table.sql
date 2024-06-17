@@ -1,6 +1,3 @@
--- creates tables called first_table in current database
+-- retrieves the CREATE TABLE description for first_table
 
-CREATE TABLE first_table (
-  id INT,
-  name VARCHAR(256),
-);
+SHOW CREATE TABLE first_table;
