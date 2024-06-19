@@ -17,15 +17,15 @@ def main():
         db=argv[3],
     )
 
-    cur = db.cursor()
+    c = db.cursor()
 
-    cur.execute("SELECT * FROM states ORDER BY states.id")
+    c.execute("SELECT * FROM states ORDER BY states.id")
 
-    rows = cur.fetchall()
+    rows = c.fetchall()
     for row in rows:
         print(row)
 
-    cur.close()
+    c.close()
     db.close()
 
 
