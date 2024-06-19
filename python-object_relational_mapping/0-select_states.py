@@ -2,9 +2,9 @@
 
 """SQL query - retrieves all rows from states table"""
 
-
 import MySQLdb
 from sys import argv
+
 
 def main():
     """creates SQL query"""
@@ -27,6 +27,7 @@ def main():
 
     cur.close()
     db.close()
+
 
 if __name__ == "__main__":
     main()
