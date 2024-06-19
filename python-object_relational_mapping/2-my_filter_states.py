@@ -25,7 +25,7 @@ def main():
     c = db.cursor()
 
     c.execute(
-        "SELECT * FROM states WHERE name LIKE '{}' "
+        "SELECT * FROM states WHERE BINARY name LIKE '{}' "
         "ORDER BY states.id".format(state_name_searched)
     )
 
