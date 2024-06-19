@@ -1,64 +1,6 @@
+-- retrieves all shows in hbtn_0d_tvshows with no genre
 
-mysql> SHOW TABLES;
-+---------------------------+
-| Tables_in_hbtn_0d_tvshows |
-+---------------------------+
-| tv_genres                 |
-| tv_show_genres            |
-| tv_shows                  |
-+---------------------------+
-
-mysql> SELECT * FROM tv_shows;
-+----+-----------------------+
-| id | title                 |
-+----+-----------------------+
-|  1 | House                 |
-|  2 | Game of Thrones       |
-|  3 | The Big Bang Theory   |
-|  4 | New Girl              |
-|  5 | Silicon Valley        |
-|  6 | Breaking Bad          |
-|  7 | Better Call Saul      |
-|  8 | Dexter                |
-|  9 | Homeland              |
-| 10 | The Last Man on Earth |
-+----+-----------------------+
-
-mysql> SELECT * FROM tv_show_genres;
-+---------+----------+
-| show_id | genre_id |
-+---------+----------+
-|       1 |        1 |
-|       1 |        2 |
-|       2 |        3 |
-|       2 |        1 |
-|       2 |        4 |
-|       3 |        5 |
-|       4 |        5 |
-|       5 |        5 |
-|       6 |        6 |
-|       6 |        1 |
-|       6 |        7 |
-|       6 |        8 |
-|       8 |        6 |
-|       8 |        1 |
-|       8 |        2 |
-|       8 |        7 |
-|       8 |        8 |
-|      10 |        5 |
-|      10 |        1 |
-+---------+----------+
-
-mysql> SELECT * FROM tv_genres;
-+----+-----------+
-| id | name      |
-+----+-----------+
-|  1 | Drama     |
-|  2 | Mystery   |
-|  3 | Adventure |
-|  4 | Fantasy   |
-|  5 | Comedy    |
-|  6 | Crime     |
-|  7 | Suspense  |
-|  8 | Thriller  |
-+----+-----------+
+SELECT tv_shows.title, tv_show_genres.genre_id
+FROM tv_shows LEFT JOIN tv_show_genres ON tv_shows.id = tv_show_genres.show_id
+WHERE tv_show_genres.genre_id IS NULL
+ORDER BY tv_shows.title, tv_show_genres.genre_id;
