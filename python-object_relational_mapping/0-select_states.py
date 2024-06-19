@@ -1,20 +1,17 @@
 #!/usr/bin/python3
 
-"""creates SQL query via MySQLdb
-
-retrieves all rows from states table
-"""
+"""SQL query - retrieves all rows from states table"""
 
 
 import MySQLdb
 from sys import argv
 
 db = MySQLdb.connect(
-    host = "localhost",
-    port = 3306,
-    user = argv[1],
-    passwd = argv[2],
-    db = argv[3],
+    host="localhost",
+    port=3306,
+    user=argv[1],
+    passwd=argv[2],
+    db=argv[3],
 )
 
 cur = db.cursor()
