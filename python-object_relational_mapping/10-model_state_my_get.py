@@ -1,18 +1,39 @@
 #!/usr/bin/python3
 
-# Write a script that prints the State object with the name passed as argument from the database hbtn_0e_6_usa
-#
-#     Your script should take 4 arguments: mysql username, mysql password, database name and state name to search (SQL injection free)
-#     You must use the module SQLAlchemy
-#     You must import State and Base from model_state - from model_state import Base, State
-#     Your script should connect to a MySQL server running on localhost at port 3306
-#     You can assume you have one record with the state name to search
-#     Results must display the states.id
-#     If no state has the name you searched for, display Not found
-#     Your code should not be executed when imported
-#
-# guillaume@ubuntu:~/$ ./10-model_state_my_get.py root root hbtn_0e_6_usa Texas
-# 3
-# guillaume@ubuntu:~/$ ./10-model_state_my_get.py root root hbtn_0e_6_usa Illinois
-# Not found
-# guillaume@ubuntu:~/$ 
+"""defines the function model_state_my_get"""
+
+from sqlalchemy.orm import sessionmaker
+from sqlalchemy import create_engine
+from model_state import Base, State
+from sys import argv
+
+
+def model_state_my_get():
+    """lists first state object for specified database"""
+
+    user = argv[1]
+    password = argv[2]
+    host_name = 'localhost'
+    db_name = argv[3]
+    state_name = argv[4]
+
+    engine_base = 'mysql+mysqldb://{}:{}@{}:3306/{}'
+
+    engine = create_engine(
+        engine_base.format(user, password, host_name, db_name)
+    )
+
+    Base.metadata.create_all(bind=engine)
+
+    Session = sessionmaker(bind=engine)
+
+    with Session() as session:
+        state = session.query(State).filter(State.name == state_name).first()
+        if state:
+            print(f"{state.id}: {state.name}")
+        else:
+            print("Not found")
+
+
+if __name__ == "__main__":
+    model_state_my_get()
