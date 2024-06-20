@@ -27,7 +27,7 @@ def model_state_insert():
     Session = sessionmaker(bind=engine)
 
     with Session() as session:
-        new_state = State(state='Louisiana')
+        new_state = State(name='Louisiana')
         session.add(new_state)
         session.commit()
         print(new_state.id)
