@@ -9,7 +9,7 @@ from sys import argv
 
 
 def model_state_my_get():
-    """lists first state object for specified database"""
+    """retrieves state objects matching input name"""
 
     user = argv[1]
     password = argv[2]
@@ -29,8 +29,9 @@ def model_state_my_get():
 
     with Session() as session:
         state = session.query(State).filter(State.name == state_name).first()
+
         if state:
-            print(f"{state.id}: {state.name}")
+            print(state.id)
         else:
             print("Not found")
 
