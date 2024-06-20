@@ -13,7 +13,7 @@ def model_state_fetch_all():
 
     user = argv[1]
     password = argv[2]
-    host_name = 'mysql'
+    host_name = 'localhost'
     db_name = argv[3]
 
     engine_base = 'mysql+mysqldb://{}:{}@{}:3306/{}'
