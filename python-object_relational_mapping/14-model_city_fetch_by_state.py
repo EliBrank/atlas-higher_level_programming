@@ -1,21 +1,37 @@
 #!/usr/bin/python3
 
-# Write a Python file similar to model_state.py named model_city.py that contains the class definition of a City.
-#
-#     City class:
-#         inherits from Base (imported from model_state)
-#         links to the MySQL table cities
-#         class attribute id that represents a column of an auto-generated, unique integer, can’t be null and is a primary key
-#         class attribute name that represents a column of a string of 128 characters and can’t be null
-#         class attribute state_id that represents a column of an integer, can’t be null and is a foreign key to states.id
-#     You must use the module SQLAlchemy
-#
-# Next, write a script 14-model_city_fetch_by_state.py that prints all City objects from the database hbtn_0e_14_usa:
-#
-#     Your script should take 3 arguments: mysql username, mysql password and database name
-#     You must use the module SQLAlchemy
-#     You must import State and Base from model_state - from model_state import Base, State
-#     Your script should connect to a MySQL server running on localhost at port 3306
-#     Results must be sorted in ascending order by cities.id
-#     Results must be display as they are in the example below (<state name>: (<city id>) <city name>)
-#     Your code should not be executed when imported
+"""defines the function model_city_fetch_by_state"""
+
+from sqlalchemy.orm import sessionmaker
+from sqlalchemy import create_engine
+from model_state import Base, State
+from model_city import City
+from sys import argv
+
+
+def model_city_fetch_by_state():
+    """deletes State objects with name containing a"""
+
+    user = argv[1]
+    password = argv[2]
+    host_name = 'mysql'
+    db_name = argv[3]
+
+    engine_base = 'mysql+mysqldb://{}:{}@{}:3306/{}'
+
+    engine = create_engine(
+        engine_base.format(user, password, host_name, db_name)
+    )
+
+    Base.metadata.create_all(bind=engine)
+
+    Session = sessionmaker(bind=engine)
+
+    with Session() as session:
+        location = session.query(City, State).join(State).order_by(City.id)
+        for city, state in location:
+            print(f"{state.name}: ({city.id}) {city.name}")
+
+
+if __name__ == "__main__":
+    model_city_fetch_by_state()

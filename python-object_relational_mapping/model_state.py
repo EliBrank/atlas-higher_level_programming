@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
-"""defines the function print_square"""
+"""defines the class State"""
 
 from sqlalchemy import Column, Integer, String
 from sqlalchemy.ext.declarative import declarative_base
