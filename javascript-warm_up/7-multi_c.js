@@ -8,6 +8,6 @@ if (args[0] === undefined) {
   console.log('Missing number of occurrences');
 } else if (myNum > 0) {
   for (let i = 0; i < myNum; i++) {
-	console.log(statement);
+    console.log(statement);
   }
 }
