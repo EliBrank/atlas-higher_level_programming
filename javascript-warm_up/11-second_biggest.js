@@ -5,7 +5,6 @@ let numBiggest = -Infinity;
 let numSecondBiggest = -Infinity;
 
 function checkSecondBiggest (numArray) {
-
   if (numArray.length === 0 || numArray.length === 1) {
     return 0;
   }
