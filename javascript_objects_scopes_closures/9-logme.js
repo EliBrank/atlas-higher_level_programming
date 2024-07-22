@@ -3,8 +3,8 @@
 let logCount = 0;
 
 function logMe (item) {
-  logCount++;
   console.log(`${logCount}: ${item}`);
+  logCount++;
 }
 
 module.exports = { logMe };
