@@ -9,13 +9,11 @@ class Rectangle {
   }
 
   print () {
-    if (this.width && this.height) {
-      for (let y = 0; y < this.height; y++) {
-        for (let x = 0; x < this.width; x++) {
-          process.stdout.write('X');
-        }
-        console.log();
+    for (let y = 0; y < this.height; y++) {
+      for (let x = 0; x < this.width; x++) {
+        process.stdout.write('X');
       }
+      console.log();
     }
   }
 }
