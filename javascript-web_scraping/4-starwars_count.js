@@ -8,7 +8,7 @@ if (process.argv.length === 2) {
 }
 
 const url = process.argv[2];
-const characterUrl = 'https://swapi-api.hbtn.io/api/people/18/';
+const characterID = '18';
 
 request(url, function (error, response, body) {
   if (error) {
@@ -19,8 +19,10 @@ request(url, function (error, response, body) {
     const films = JSON.parse(body);
     let appearenceCount = 0;
     for (const film of films.results) {
-      if (film.characters.includes(characterUrl)) {
-        appearenceCount++;
+      for (const char of film.characters) {
+        if (char.endsWith(`/${characterID}/`)) {
+          appearenceCount++;
+        }
       }
     }
     console.log(appearenceCount);
