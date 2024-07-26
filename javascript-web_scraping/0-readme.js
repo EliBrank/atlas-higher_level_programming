@@ -11,8 +11,8 @@ if (process.argv.length === 2) {
 
 fs.readFile(filePath, 'utf8', (err, data) => {
   if (err) {
-	console.error(err);
-	process.exit(1);
+    console.error(err);
+    process.exit(1);
   }
   console.log(data);
 });
